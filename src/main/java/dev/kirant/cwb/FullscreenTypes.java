@@ -11,7 +11,7 @@ public final class FullscreenTypes {
     private static final FullscreenType[] VALUES;
 
     static {
-        int length = 4 + (OS.isMacOS() ? 1 : 0);
+        int length = 4 + (OS.isMacOS() ? 2 : 0);
         VALUES = new FullscreenType[length];
         VALUES[length - 1] = new FullscreenType("minecraft:default");
 
@@ -33,6 +33,7 @@ public final class FullscreenTypes {
             VALUES[2] = maximizedFullscreen;
             VALUES[1] = new FullscreenType("macos:windowed", WindowPlacementStrategies.FILL_MONITOR_SAFE_AREA, new WindowHint[] { WindowHints.DECORATED, WindowHints.AUTO_ICONIFY, hasShadow, hasDock, stub }, WindowHints.RESIZABLE);
             VALUES[0] = new FullscreenType("macos:borderless", WindowPlacementStrategies.FILL_MONITOR_SAFE_AREA, new WindowHint[] { WindowHints.DECORATED, WindowHints.AUTO_ICONIFY, hasShadow, hasDockAndMenuBar, stub }, WindowHints.RESIZABLE);
+            VALUES[4] = new FullscreenType("macos:borderless_full_display", WindowPlacementStrategies.FILL_MONITOR, new WindowHint[] { WindowHints.DECORATED, WindowHints.AUTO_ICONIFY, hasShadow, hasDockAndMenuBar, stub }, WindowHints.RESIZABLE);
         } else {
             VALUES[2] = windowedFullscreen;
             VALUES[1] = maximizedFullscreen;
